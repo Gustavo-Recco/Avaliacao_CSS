@@ -132,13 +132,12 @@ section p {                          /* Legenda */
 	.navegaçao li a {                /* Mexe nos Botões*/
 
 		border-radius: 6px;
-		box-shadow: 2px 3px 8px  #505251;
 		text-align: center;
 		background-color:  #505251;   
 		margin-bottom: 22px;
 		padding: 2px;
 		width: 110px;                /* Largura do botão*/
-    	height: 20px;
+    		height: 20px;
 		font-size: 15px;
 	}
 
