@@ -1,0 +1,166 @@
+@charset "utf-8";  
+
+body {
+
+    background-color: white;
+    margin: 0px;
+    padding: 0px;
+    font-size: 1.2rem;
+    font-family: sans-serif ;
+}
+
+header {
+
+    background-color:  black;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center; 
+}
+
+header a {                              /* Mexe com os elementos da Logo */
+
+	color: aliceblue; 
+	padding-left: 1%;
+	text-decoration: none;		        /* Sem linha de texto */
+}
+
+.navegaçao {
+
+    display:flex ;
+}
+
+.navegaçao li {
+
+    list-style: none;				   /* Sem as bolinhas da lista */
+}
+
+.navegaçao li a {                      /* Mexe com os elementos da Navegação */
+
+	padding: 11px;               		
+	margin-left: 11px;                 /* Espaçamentos entre a navegação */ 
+    display: block;                      
+    position: relative;
+}
+
+.navegaçao li a::after {               /* Linha interativa na parte de baixo da navegação */
+
+    content: '';                       /* É utilizada no ::after para inserir o conteúdo gerado*/
+   	position: absolute;				   /* Não mexe a posição */
+    left: 0;
+    bottom: -1px;                      /* Distancia da linha com a borda */
+    width: 100%;
+    height: 2px;
+    background-color: aliceblue;     /* Cor da linha */
+    border-radius: 5px;
+    transform-origin: right;           /* Lado que a linha começa */
+    transform: scaleX(0);
+    transition: transform .5s;
+}
+
+.navegaçao li a:hover::after {         /* Outra parte da linha com interação da navegação */
+
+    transform-origin: left;            /* Lado que termina a linha */
+    transform: scaleX(1);
+}
+
+h3 {                                   /* Titulo Section Flexbox */                     
+
+	font-size: 1.8em;                  /* Tamanho da fonte */
+	margin-top: 3%;
+	display: flex;
+	justify-content: center;
+}
+
+section {
+
+	display: flex;
+	flex-wrap: wrap;
+	padding-left: 10%;
+	padding-right: 10%;
+	padding-bottom: 10%;
+}
+  
+section article {
+	
+	flex-grow: 2;	
+	flex-shrink: 1;  
+	flex-basis: 250px;              /* Imagem começa com esse tamanho */
+	margin: 11px;
+}
+
+img {
+	
+	max-width: 100%;
+}
+
+section p {                          /* Legenda */
+	
+	margin: 0%;
+	margin-bottom: 5%;               /* Espaçamento inferior da legenda */
+	font-size: 0.7em;                /* Tamanho da fonte */
+	display: flex;
+	justify-content: center;
+}
+
+@media screen and (max-width:700px) {  
+	
+	header {
+
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
+
+	header a {                       /* Logo */
+		
+		color: aliceblue; 
+		padding-top: 20px;
+		font-size: 2em;              /* Tamanho da fonte da Logo */  
+		text-decoration: none;		 /* Sem linha de texto */
+	}
+	 .navegaçao {                    /* Botões em coluna */
+
+		flex-direction: column; 
+		padding: 20px;
+	}
+
+	.navegaçao  li {
+
+        list-style: none;		     /* Sem as bolinhas */		
+	}
+
+	.navegaçao li a {                /* Mexe nos Botões*/
+
+		border-radius: 6px;
+		text-align: center;
+		background-color:  #505251;   
+		margin-bottom: 22px;
+		padding: 2px;
+		width: 110px;                /* Largura do botão*/
+    	height: 20px;
+		font-size: 15px;
+	}
+
+	.navegaçao li a:hover {          /* Backgroud do botão */
+
+		border-radius: 6px;	
+		background-color: rgba(255, 255, 255, 0.63);
+		color: black;
+	}
+
+	.navegaçao li a::after {        /* Para a linha interativa na parte de baixo da navegação */
+
+		background-color: transparent;      
+	}
+	
+	section {
+
+		align-items: center;
+		flex-direction: column;     /* Coloca as imgens em coluna */
+	}
+
+	section p {
+	
+		font-size: 1em;             /* Tamanho da fonte da legenda */
+	}
+}
